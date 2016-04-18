@@ -1,30 +1,124 @@
 package com.github.hyunj0.weatherme.model;
 
-public class DailyForecastData {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+public class DataPoint {
+
+    @SerializedName("time")
+    @Expose
     private long time;
+
+    @SerializedName("summary")
+    @Expose
     private String summary;
+
+    @SerializedName("icon")
+    @Expose
     private String icon;
+
+    @SerializedName("sunriseTime")
+    @Expose
     private long sunriseTime;
+
+    @SerializedName("sunsetTime")
+    @Expose
     private long sunsetTime;
+
+    @SerializedName("moonPhase")
+    @Expose
     private double moonPhase;
+
+    @SerializedName("nearestStormDistance")
+    @Expose
+    private double nearestStormDistance;
+
+    @SerializedName("nearestStormBearing")
+    @Expose
+    private double nearestStormBearing;
+
+    @SerializedName("precipIntensity")
+    @Expose
     private double precipIntensity;
+
+    @SerializedName("precipProbability")
+    @Expose
     private double precipProbability;
+
+    @SerializedName("precipType")
+    @Expose
+    private String precipType;
+
+    @SerializedName("precipAccumulation")
+    @Expose
+    private double precipAccumulation;
+
+    @SerializedName("temperature")
+    @Expose
+    private double temperature;
+
+    @SerializedName("temperatureMin")
+    @Expose
     private double temperatureMin;
+
+    @SerializedName("temperatureMinTime")
+    @Expose
     private long temperatureMinTime;
+
+    @SerializedName("temperatureMax")
+    @Expose
     private double temperatureMax;
+
+    @SerializedName("temperatureMaxTime")
+    @Expose
     private long temperatureMaxTime;
+
+    @SerializedName("apparentTemperatureMin")
+    @Expose
     private double apparentTemperatureMin;
+
+    @SerializedName("apparentTemperatureMinTime")
+    @Expose
     private long apparentTemperatureMinTime;
+
+    @SerializedName("apparentTemperatureMax")
+    @Expose
     private double apparentTempertureMax;
+
+    @SerializedName("apparentTemperatureMaxTime")
+    @Expose
     private long apparentTemperatureMaxTime;
+
+    @SerializedName("dewPoint")
+    @Expose
     private double dewPoint;
-    private double humidity;
+
+    @SerializedName("windSpeed")
+    @Expose
     private double windSpeed;
+
+    @SerializedName("windBearing")
+    @Expose
     private double windBearing;
-    private double visibility;
+
+    @SerializedName("cloudCover")
+    @Expose
     private double cloudCover;
+
+    @SerializedName("humidity")
+    @Expose
+    private double humidity;
+
+    @SerializedName("pressure")
+    @Expose
     private double pressure;
+
+    @SerializedName("visibility")
+    @Expose
+    private double visibility;
+
+    @SerializedName("ozone")
+    @Expose
     private double ozone;
 
     public long getTime() {
@@ -75,6 +169,22 @@ public class DailyForecastData {
         this.moonPhase = moonPhase;
     }
 
+    public double getNearestStormDistance() {
+        return nearestStormDistance;
+    }
+
+    public void setNearestStormDistance(double nearestStormDistance) {
+        this.nearestStormDistance = nearestStormDistance;
+    }
+
+    public double getNearestStormBearing() {
+        return nearestStormBearing;
+    }
+
+    public void setNearestStormBearing(double nearestStormBearing) {
+        this.nearestStormBearing = nearestStormBearing;
+    }
+
     public double getPrecipIntensity() {
         return precipIntensity;
     }
@@ -89,6 +199,30 @@ public class DailyForecastData {
 
     public void setPrecipProbability(double precipProbability) {
         this.precipProbability = precipProbability;
+    }
+
+    public String getPrecipType() {
+        return precipType;
+    }
+
+    public void setPrecipType(String precipType) {
+        this.precipType = precipType;
+    }
+
+    public double getPrecipAccumulation() {
+        return precipAccumulation;
+    }
+
+    public void setPrecipAccumulation(double precipAccumulation) {
+        this.precipAccumulation = precipAccumulation;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
     }
 
     public double getTemperatureMin() {
@@ -163,14 +297,6 @@ public class DailyForecastData {
         this.dewPoint = dewPoint;
     }
 
-    public double getHumidity() {
-        return humidity;
-    }
-
-    public void setHumidity(double humidity) {
-        this.humidity = humidity;
-    }
-
     public double getWindSpeed() {
         return windSpeed;
     }
@@ -187,14 +313,6 @@ public class DailyForecastData {
         this.windBearing = windBearing;
     }
 
-    public double getVisibility() {
-        return visibility;
-    }
-
-    public void setVisibility(double visibility) {
-        this.visibility = visibility;
-    }
-
     public double getCloudCover() {
         return cloudCover;
     }
@@ -203,12 +321,28 @@ public class DailyForecastData {
         this.cloudCover = cloudCover;
     }
 
+    public double getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(double humidity) {
+        this.humidity = humidity;
+    }
+
     public double getPressure() {
         return pressure;
     }
 
     public void setPressure(double pressure) {
         this.pressure = pressure;
+    }
+
+    public double getVisibility() {
+        return visibility;
+    }
+
+    public void setVisibility(double visibility) {
+        this.visibility = visibility;
     }
 
     public double getOzone() {

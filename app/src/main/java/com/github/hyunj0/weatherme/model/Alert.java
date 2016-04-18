@@ -1,11 +1,28 @@
 package com.github.hyunj0.weatherme.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Alert {
 
+    @SerializedName("title")
+    @Expose
     private String title;
+
+    @SerializedName("time")
+    @Expose
     private long time;
+
+    @SerializedName("expires")
+    @Expose
     private long expires;
+
+    @SerializedName("description")
+    @Expose
     private String description;
+
+    @SerializedName("uri")
+    @Expose
     private String uri;
 
     public String getTitle() {

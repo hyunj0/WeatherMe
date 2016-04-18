@@ -1,17 +1,46 @@
 package com.github.hyunj0.weatherme.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Forecast {
 
+    @SerializedName("latitude")
+    @Expose
     private double latitude;
+
+    @SerializedName("longitude")
+    @Expose
     private double longitude;
+
+    @SerializedName("timezone")
+    @Expose
     private String timezone;
+
+    @SerializedName("offset")
+    @Expose
     private int offset;
+
+    @SerializedName("currently")
+    @Expose
     private Currently currently;
+
+    @SerializedName("minutely")
+    @Expose
     private Minutely minutely;
+
+    @SerializedName("hourly")
+    @Expose
     private Hourly hourly;
+
+    @SerializedName("daily")
+    @Expose
     private Daily daily;
+
+    @SerializedName("alerts")
+    @Expose
     private List<Alert> alerts;
 
     public double getLatitude() {
