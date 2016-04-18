@@ -5,9 +5,17 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.github.hyunj0.weatherme.model.Forecast;
+import com.google.gson.Gson;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +32,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        Call<Forecast> forecastCall = DarkSkyForecastService.getDarkSkyForecast().getForecast(40.7127,-74.0059);
+        forecastCall.enqueue(new Callback<Forecast>() {
+            @Override
+            public void onResponse(Call<Forecast> call, Response<Forecast> response) {
+                Log.d("FORECAST FOUND", new Gson().toJson(response.body()));
+            }
+
+            @Override
+            public void onFailure(Call<Forecast> call, Throwable t) {
+
             }
         });
     }
